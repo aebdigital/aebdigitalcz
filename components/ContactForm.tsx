@@ -21,14 +21,14 @@ export function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData((prevData: typeof formData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   const handleTurnstileVerify = (token: string) => {
-    setFormData((prevData) => ({
+    setFormData((prevData: typeof formData) => ({
       ...prevData,
       turnstileToken: token,
     }));
@@ -52,7 +52,7 @@ export function ContactForm() {
 
     // Basic form validation
     if (!name || !email || !subject || !message) {
-      showMessage('Prosím vyplňte všetky povinné polia.', 'error');
+      showMessage('Prosím vyplňte všechna povinná pole.', 'error');
       setLoading(false);
       return;
     }
@@ -60,22 +60,22 @@ export function ContactForm() {
     // Email validation
     const emailRegex = /^[^S@]+@[^S@]+\.[^S@]+$/;
     if (!emailRegex.test(email)) {
-      showMessage('Prosím zadajte platný email.', 'error');
+      showMessage('Prosím zadejte platný email.', 'error');
       setLoading(false);
       return;
     }
 
     // Turnstile validation
     if (!turnstileToken) {
-      showMessage('Prosím, potvrďte, že nie ste robot.', 'error');
+      showMessage('Prosím, potvrďte, že nejste robot.', 'error');
       setLoading(false);
       return;
     }
 
     let fullMessage = `${message}\n\n`;
-    if (phone) fullMessage += `Telefón: ${phone}\n`;
-    if (budget) fullMessage += `Rozpočet: ${budget}\n`;
-    fullMessage += `Typ projektu: ${subject}`;
+    if (phone) fullMessage += `Phone: ${phone}\n`;
+    if (budget) fullMessage += `Budget: ${budget}\n`;
+    fullMessage += `Project Type: ${subject}`;
 
     const payload = {
       name: name,
@@ -97,7 +97,7 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        showMessage(data.message || 'Ďakujeme! Vaša správa bola úspešne odoslaná.', 'success');
+        showMessage(data.message || 'Děkujeme! Vaše zpráva byla úspěšně odeslána.', 'success');
         setFormData({
           name: '',
           email: '',
@@ -110,11 +110,11 @@ export function ContactForm() {
         });
         // Reset turnstile here if needed, but the component might handle it
       } else {
-        showMessage(data.error || 'Nastala chyba pri odosielaní správy.', 'error');
+        showMessage(data.error || 'Nastala chyba při odesílání zprávy.', 'error');
       }
     } catch (error) {
       console.error('Error:', error);
-      showMessage('❌ Nastala chyba pri odosielaní správy. Skúste to prosím neskôr alebo nás kontaktujte telefonicky na +421 908 507 131.', 'error');
+      showMessage('❌ Nastala chyba při odesílání zprávy. Zkuste to prosím později nebo nás kontaktujte telefonicky na +421 908 507 131.', 'error');
     } finally {
       setLoading(false);
     }
@@ -125,13 +125,13 @@ export function ContactForm() {
       <div className="container">
         <div className="contact-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="contact-text">
-            <h2 className="heading-section text-white mb-6 text-left">Máte nápad? Poďme na to!</h2>
-            <p className="text-gray-light mb-8">Máte projekt v hlave? Napíšte nám a my vám vytvoríme riešenie presne na mieru s bezplatnou konzultáciou.</p>
+            <h2 className="heading-section text-white mb-6 text-left">Máte nápad? Pojďme na to!</h2>
+            <p className="text-gray-light mb-8">Máte projekt v hlavě? Napište nám a my vám vytvoříme řešení přesně na míru s bezplatnou konzultací.</p>
 
             <div className="contact-person-box flex items-center bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[15px] hover:-translate-y-1 transition-transform duration-300">
               <div className="contact-person-info">
                 <h4 className="text-white text-lg font-bold">Peter Samuel Bobák</h4>
-                <p className="text-gray-light text-sm mb-1">Konateľ</p>
+                <p className="text-gray-light text-sm mb-1">Jednatel</p>
                 <a href="tel:+421908507131" className="text-accent-teal hover:underline text-sm font-bold">+421 908 507 131</a>
               </div>
             </div>
@@ -152,7 +152,7 @@ export function ContactForm() {
               />
             </div>
             <div className="form-group mb-4">
-              <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Meno *</label>
+              <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Jméno *</label>
               <input
                 type="text"
                 id="name"
@@ -178,12 +178,12 @@ export function ContactForm() {
             </div>
 
             <div className="form-group mb-4">
-              <label htmlFor="phone" className="block text-white text-sm font-bold mb-2">Telefón</label>
+              <label htmlFor="phone" className="block text-white text-sm font-bold mb-2">Telefon</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="+421 XXX XXX XXX"
+                placeholder="+420 XXX XXX XXX"
                 className="w-full py-3 px-4 text-white bg-[#383a3c] border border-white/20 rounded-[10px] focus:outline-none focus:border-accent-teal transition-colors"
                 value={formData.phone}
                 onChange={handleChange}
@@ -201,13 +201,13 @@ export function ContactForm() {
                 required
               >
                 <option value="" className="bg-dark-gray">Vyberte typ projektu</option>
-                <option value="webova-stranka" className="bg-dark-gray">Webová stránka</option>
+                <option value="website" className="bg-dark-gray">Webová stránka</option>
                 <option value="eshop" className="bg-dark-gray">E-shop</option>
-                <option value="webova-aplikacia" className="bg-dark-gray">Webová aplikácia</option>
-                <option value="marketing" className="bg-dark-gray">Digital marketing</option>
-                <option value="dizajn" className="bg-dark-gray">UI/UX dizajn</option>
-                <option value="custom" className="bg-dark-gray">Vývoj na mieru</option>
-                <option value="ine" className="bg-dark-gray">Iné</option>
+                <option value="web-application" className="bg-dark-gray">Webová aplikace</option>
+                <option value="marketing" className="bg-dark-gray">Digitální marketing</option>
+                <option value="design" className="bg-dark-gray">UI/UX design</option>
+                <option value="custom" className="bg-dark-gray">Vývoj na míru</option>
+                <option value="other" className="bg-dark-gray">Jiné</option>
               </select>
             </div>
 
@@ -221,11 +221,11 @@ export function ContactForm() {
                 onChange={handleChange}
               >
                 <option value="" className="bg-dark-gray">Vyberte rozpočet</option>
-                <option value="do-1000" className="bg-dark-gray">Do 1 000 €</option>
+                <option value="under-1000" className="bg-dark-gray">Do 1 000 €</option>
                 <option value="1000-3000" className="bg-dark-gray">1 000 - 3 000 €</option>
                 <option value="3000-5000" className="bg-dark-gray">3 000 - 5 000 €</option>
                 <option value="5000-10000" className="bg-dark-gray">5 000 - 10 000 €</option>
-                <option value="nad-10000" className="bg-dark-gray">Nad 10 000 €</option>
+                <option value="over-10000" className="bg-dark-gray">Nad 10 000 €</option>
               </select>
             </div>
 
@@ -235,7 +235,7 @@ export function ContactForm() {
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Opíšte svoj projekt, ciele a požiadavky..."
+                placeholder="Popište svůj projekt, cíle a požadavky..."
                 className="w-full py-3 px-4 text-white bg-[#383a3c] border border-white/20 rounded-[10px] focus:outline-none focus:border-accent-teal transition-colors"
                 value={formData.message}
                 onChange={handleChange}
@@ -257,8 +257,8 @@ export function ContactForm() {
 
             <button type="submit" className="btn btn-primary w-full rounded-none uppercase font-bold tracking-wider hover:-translate-y-1 transition-transform duration-300" disabled={loading}>
               <span className="btn-text-container">
-                <span className="btn-text btn-text-visible">{loading ? <span className="spinner mr-2"></span> : ''} Odoslať správu</span>
-                <span className="btn-text btn-text-hidden">ODOSLAŤ</span>
+                <span className="btn-text btn-text-visible">{loading ? <span className="spinner mr-2"></span> : ''} Odeslat zprávu</span>
+                <span className="btn-text btn-text-hidden">ODESLAT</span>
               </span>
             </button>
           </form>

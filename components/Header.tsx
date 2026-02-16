@@ -49,16 +49,16 @@ export function Header() {
                 <ul className="nav-menu flex space-x-6">
                   <li>
                     <Link href="/portfolio" className={`text-xl text-white nav-link-underline transition-colors ${isActive('/portfolio') ? 'active' : ''}`}>
-                      Portfólio
+                      Portfolio
                     </Link>
                   </li>
                   <li>
-                    <Link href="/sluzby" className={`text-xl text-white nav-link-underline transition-colors ${isActive('/sluzby') ? 'active' : ''}`}>
+                    <Link href="/services" className={`text-xl text-white nav-link-underline transition-colors ${isActive('/services') ? 'active' : ''}`}>
                       Služby
                     </Link>
                   </li>
                   <li>
-                    <Link href="/o-nas" className={`text-xl text-white nav-link-underline transition-colors ${isActive('/o-nas') ? 'active' : ''}`}>
+                    <Link href="/about" className={`text-xl text-white nav-link-underline transition-colors ${isActive('/about') ? 'active' : ''}`}>
                       O nás
                     </Link>
                   </li>
@@ -72,10 +72,10 @@ export function Header() {
             </div>
 
             {/* CTA Button (Desktop) */}
-            <Link href="/kontakt" className="btn btn-secondary hidden md:flex">
+            <Link href="/contact" className="btn btn-secondary hidden md:flex">
               <span className="btn-text-container">
-                <span className="btn-text btn-text-visible">Kontaktujte nás</span>
-                <span className="btn-text btn-text-hidden">VIAC</span>
+                <span className="btn-text btn-text-visible">Kontakt</span>
+                <span className="btn-text btn-text-hidden">VÍCE</span>
               </span>
             </Link>
 
@@ -95,9 +95,8 @@ export function Header() {
 
       {/* Mobile Menu - Outside header to avoid mix-blend-difference inheritance */}
       <div
-        className={`mobile-menu fixed top-0 left-0 w-full h-full transform ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden z-[100] overflow-hidden animate-gradient-shift`}
+        className={`mobile-menu fixed top-0 left-0 w-full h-full transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out md:hidden z-[100] overflow-hidden animate-gradient-shift`}
         style={{
           background: 'linear-gradient(135deg, #030303 0%, #0a0a0a 25%, #050505 50%, #080808 75%, #040404 100%)',
           backgroundSize: '400% 400%'
@@ -137,16 +136,16 @@ export function Header() {
           <ul className="flex flex-col">
             <li className="border-b border-white/10">
               <Link href="/portfolio" className={`block text-white text-3xl py-4 ${isActive('/portfolio') ? 'active' : ''}`} onClick={toggleMobileMenu}>
-                Portfólio
+                Portfolio
               </Link>
             </li>
             <li className="border-b border-white/10">
-              <Link href="/sluzby" className={`block text-white text-3xl py-4 ${isActive('/sluzby') ? 'active' : ''}`} onClick={toggleMobileMenu}>
+              <Link href="/services" className={`block text-white text-3xl py-4 ${isActive('/services') ? 'active' : ''}`} onClick={toggleMobileMenu}>
                 Služby
               </Link>
             </li>
             <li className="border-b border-white/10">
-              <Link href="/o-nas" className={`block text-white text-3xl py-4 ${isActive('/o-nas') ? 'active' : ''}`} onClick={toggleMobileMenu}>
+              <Link href="/about" className={`block text-white text-3xl py-4 ${isActive('/about') ? 'active' : ''}`} onClick={toggleMobileMenu}>
                 O nás
               </Link>
             </li>
@@ -156,7 +155,7 @@ export function Header() {
               </Link>
             </li>
             <li className="border-b border-white/10">
-              <Link href="/kontakt" className={`block text-white text-3xl py-4 ${isActive('/kontakt') ? 'active' : ''}`} onClick={toggleMobileMenu}>
+              <Link href="/contact" className={`block text-white text-3xl py-4 ${isActive('/contact') ? 'active' : ''}`} onClick={toggleMobileMenu}>
                 Kontakt
               </Link>
             </li>

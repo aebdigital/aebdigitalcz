@@ -3,24 +3,24 @@ import { FaHandPointer } from "react-icons/fa";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfólio - Naše najlepšie webové stránky a projekty | AEB Digital",
-  description: "Pozrite si ukážky našich projektov pre 120+ spokojných klientov - webové stránky, e-shopy, aplikácie pre slovenské firmy. Moderný dizajn, SEO optimalizácia, responzívny web.",
+  title: "Portfolio - Naše nejlepší weby a projekty | AEB Digital",
+  description: "Prohlédněte si ukázky našich projektů pro 120+ spokojených klientů - weby, e-shopy, aplikace pro firmy. Moderní design, SEO optimalizace, responzivní web.",
   keywords: [
-    "webové portfólio",
-    "ukážky webových stránok",
-    "referencie web dizajn",
-    "príklady e-shopov",
-    "webové projekty Slovensko",
+    "web portfolio",
+    "ukázky webů",
+    "web design reference",
+    "ukázky e-shopů",
+    "webové projekty",
     "AEB Digital projekty",
-    "moderné webové stránky",
+    "moderní weby",
   ],
   alternates: {
-    canonical: "https://aebdigital.sk/portfolio",
+    canonical: "https://aebdigital.com/cz/portfolio",
   },
   openGraph: {
-    title: "Portfólio - 120+ úspešných projektov | AEB Digital",
-    description: "Pozrite si ukážky našich projektov - webové stránky, e-shopy, aplikácie pre slovenské firmy.",
-    url: "https://aebdigital.sk/portfolio",
+    title: "Portfolio - 120+ Úspěšných projektů | AEB Digital",
+    description: "Prohlédněte si ukázky našich projektů - weby, e-shopy, aplikace pro firmy.",
+    url: "https://aebdigital.com/cz/portfolio",
     type: "website",
   },
 };
@@ -31,7 +31,7 @@ export default function PortfolioPage() {
       {/* Page Header */}
       <section className="page-header py-32 text-white relative">
         <div className="container">
-          <h1 className="page-title">Naše portfólio</h1>
+          <h1 className="page-title">Naše portfolio</h1>
         </div>
       </section>
 
@@ -51,7 +51,7 @@ export default function PortfolioPage() {
             >
               <div className="flex items-center bg-black/70 backdrop-blur-sm px-6 py-4 rounded-full text-white text-2xl animate-bounce-gentle">
                 <FaHandPointer className="drag-hand-icon mr-3" />
-                <span className="drag-prompt-text">Posúvajte galériu</span>
+                <span className="drag-prompt-text">Tažením prozkoumejte galerii</span>
               </div>
             </div>
           </div>

@@ -47,17 +47,17 @@ export function CookieSettingsModal() {
         >
           &times;
         </button>
-        <h3 className="text-3xl font-bold mb-6">Nastavenia cookies</h3>
+        <h3 className="text-3xl font-bold mb-6">Nastavení cookies</h3>
 
         <div className="cookie-category mb-6">
           <div className="cookie-category-header flex justify-between items-center mb-2">
             <label className="cookie-switch relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" checked disabled />
               <div className="relative w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-accent-teal after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
-              <span className="ml-3 text-lg font-semibold text-white">Nevyhnutné cookies</span>
+              <span className="ml-3 text-lg font-semibold text-white">Nezbytné cookies</span>
             </label>
           </div>
-          <p className="text-gray-light text-sm">Tieto cookies sú potrebné pre základnú funkčnosť stránky a nemožno ich vypnúť.</p>
+          <p className="text-gray-light text-sm">Tyto cookies jsou nezbytné pro základní funkčnost webu a nelze je deaktivovat.</p>
         </div>
 
         <div className="cookie-category mb-6">
@@ -73,7 +73,7 @@ export function CookieSettingsModal() {
               <span className="ml-3 text-lg font-semibold text-white">Analytické cookies</span>
             </label>
           </div>
-          <p className="text-gray-light text-sm">Pomáhajú nám pochopiť, ako návštevníci používajú našu stránku, aby sme ju mohli zlepšiť.</p>
+          <p className="text-gray-light text-sm">Pomáhají nám pochopit, jak návštěvníci používají náš web, abychom jej mohli zlepšovat.</p>
         </div>
 
         <div className="cookie-category mb-6">
@@ -89,12 +89,12 @@ export function CookieSettingsModal() {
               <span className="ml-3 text-lg font-semibold text-white">Marketingové cookies</span>
             </label>
           </div>
-          <p className="text-gray-light text-sm">Používajú sa na personalizáciu reklám a meranie ich účinnosti.</p>
+          <p className="text-gray-light text-sm">Používají se k personalizaci reklam a měření jejich účinnosti.</p>
         </div>
 
         <div className="cookie-settings-buttons flex flex-col md:flex-row gap-4 mt-8">
-          <button onClick={handleSaveSettings} className="btn btn-primary flex-1">Uložiť nastavenia</button>
-          <button onClick={handleAcceptAll} className="btn btn-primary flex-1">Súhlasím so všetkými</button>
+          <button onClick={handleSaveSettings} className="btn btn-primary flex-1">Uložit nastavení</button>
+          <button onClick={handleAcceptAll} className="btn btn-primary flex-1">Přijmout vše</button>
         </div>
       </div>
     </div>
