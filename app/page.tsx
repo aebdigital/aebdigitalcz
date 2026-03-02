@@ -306,13 +306,13 @@ export default function Home() {
 
   const portfolioItems = [
     {
-      imgSrc: "/sources/aeb-portfolio/kovosklo.webp",
+      imgSrc: "/sources/aeb-portfolio/kovo-sklo.sk.webp",
       alt: "Metalworks",
       category: "Kovovýroba",
       subheading: "Moderní webová řešení pro kovovýrobní firmy",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/stolarstvo.webp",
+      imgSrc: "/sources/aeb-portfolio/falat.sk.webp",
       alt: "Carpentry",
       category: "Truhlářství",
       subheading: "Prezentujte své truhlářské výrobky online",
@@ -324,37 +324,37 @@ export default function Home() {
       subheading: "Profesionální webové stránky pro stavební firmy",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/110.webp",
+      imgSrc: "/sources/aeb-portfolio/provel.sk.webp",
       alt: "Healthcare",
       category: "Zdravotnictví",
       subheading: "Digitální řešení pro zdravotnická zařízení",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/120.webp",
+      imgSrc: "/sources/aeb-portfolio/mtautos.sk.webp",
       alt: "Car Dealerships",
       category: "Autosalony",
       subheading: "E-shopy a katalogy pro prodej vozidel",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/70.webp",
+      imgSrc: "/sources/aeb-portfolio/veskolfarm.sk.webp",
       alt: "Agriculture",
       category: "Zemědělství",
       subheading: "Webové stránky pro zemědělské firmy",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/lerent.webp",
+      imgSrc: "/sources/aeb-portfolio/lerent.sk.webp",
       alt: "Car Rentals",
       category: "Autopůjčovny",
       subheading: "Rezervační systémy a prezentace vozidel",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/10.webp",
+      imgSrc: "/sources/aeb-portfolio/zmrdwear.sk.webp",
       alt: "Fashion",
       category: "Móda",
       subheading: "E-shopová řešení pro módní průmysl",
     },
     {
-      imgSrc: "/sources/aeb-portfolio/Screenshot 2025-12-05 at 19.20.50.webp",
+      imgSrc: "/sources/aeb-portfolio/legispro.sk.webp",
       alt: "Law Firms",
       category: "Advokátní kanceláře",
       subheading: "Profesionální webové stránky pro právní služby",
