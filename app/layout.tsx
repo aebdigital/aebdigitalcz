@@ -76,7 +76,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
     languages: {
-      "cs-CZ": siteUrl,
+      "cs-CZ": "https://aebdigital.cz",
+      "sk-SK": "https://aebdigital.sk",
       "en-US": "https://aebdigital.com",
       "de-AT": "https://aebdigital.at",
     },
