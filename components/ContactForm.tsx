@@ -251,7 +251,7 @@ export function ContactForm() {
             </div>
 
             <div className="cf-turnstile mb-6">
-              <Turnstile siteKey="0x4AAAAAACGYZibBgl0bkqM2" onSuccess={handleTurnstileVerify} />
+              <Turnstile siteKey="0x4AAAAAACli28mCQssWxHRl" onSuccess={handleTurnstileVerify} />
             </div>
 
             {formMessage.text && (
